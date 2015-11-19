@@ -2,11 +2,11 @@
 <article>
   <h2><%= @prompt.title %></h2>
 
-  <time>Updated at <%= @prompt.updated_at %></time>
+  <time>Updated on <%= @prompt.updated_at %></time>
 
-  <p><%= @prompt.time_period %></p>
+  <p><%= "Time period:"%>  <%= @prompt.time_period %></p>
 
-  <p><%= @prompt.location %></p>
+  <p><%= "Location:"%>  <%= @prompt.location %></p>
 
   <p><%= @prompt.body %></p>
 
@@ -16,11 +16,18 @@
 
   <div class='chapters'>
   <h3>Chapters</h3>
-    
+
+<%= link_to "Add new chapter", new_prompt_chapter_path(@prompt) %>
+
+
+
 
   <% @prompt.chapters.each do |chapter| %>
+
+  <br>_________________________________________</br>
+
     <div>
-      <time>Updated at <%= chapter.updated_at %></time>
+      <time>Updated on <%= chapter.updated_at %></time>
 
       <p><%= chapter.body %></p>
 
