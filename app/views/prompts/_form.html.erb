@@ -1,0 +1,11 @@
+<%= form_for @prompt do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :time_period %>
+  <%= f.text_field :time_period %>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+  <%= f.submit %>
+<% end %>

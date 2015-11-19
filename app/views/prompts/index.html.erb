@@ -1,0 +1,13 @@
+<h2>Prompts <a href="/prompts/new">(+)</a></h2>
+
+<ul>
+
+  <% @prompts.each do |prompt| %>
+    <div class = "prompt">
+      <a href="/prompts/<%= prompt.id %>">
+      <%= "#{prompt.title}" %>
+    </div>
+
+  <% end %>
+
+</ul>
