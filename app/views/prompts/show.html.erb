@@ -16,15 +16,9 @@
 
   <div class='chapters'>
   <h3>Chapters</h3>
-
-<%= link_to "Add new chapter", new_prompt_chapter_path(@prompt) %>
-
-
-
+  <br>_________________________________________</br>
 
   <% @prompt.chapters.each do |chapter| %>
-
-  <br>_________________________________________</br>
 
     <div>
       <time>Updated on <%= chapter.updated_at %></time>
@@ -35,6 +29,8 @@
 	<%= link_to "Delete", prompt_chapter_path(@prompt, chapter), method: :delete %>
 
     </div>
+    <br>_________________________________________</br>
   <% end %>
   </div>
+  <%= link_to "Add new chapter", new_prompt_chapter_path(@prompt) %>
 </article>
