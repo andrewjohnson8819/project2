@@ -1,13 +1,15 @@
+<% if current_user %>
 <h3>Prompts <a href="/prompts/new">(+)</a></h3>
-
+<% end %>
 <ul>
 
   <% @prompts.each do |prompt| %>
     <div class = "prompt">
-      <a href="/prompts/<%= prompt.id %>">
-      <%= "#{prompt.title}" %>
-    </div>
 
+      <h4><%= link_to prompt.title, prompt_path(prompt) %></h4>
+      <h5><%= prompt.body %></h5>
+    </div>
+  <br>__________________________________</br>
   <% end %>
 
 </ul>

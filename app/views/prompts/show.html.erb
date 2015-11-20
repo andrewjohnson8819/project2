@@ -1,36 +1,33 @@
 <%= link_to "&larr; Back".html_safe, prompts_path %>
 <article>
   <h2><%= @prompt.title %></h2>
-
   <time>Updated on <%= @prompt.updated_at %></time>
 
   <p><%= "Time period:"%>  <%= @prompt.time_period %></p>
-
   <p><%= "Location:"%>  <%= @prompt.location %></p>
 
   <p><%= @prompt.body %></p>
-
+  <% if current_user && current_user == @prompt.user %>
     <%= link_to "Edit Prompt", edit_prompt_path(@prompt) %>
     <%= link_to "Delete Prompt", prompt_path(@prompt), method: :delete %>
+  <% end %>
+
+
 
 
   <div class='chapters'>
   <h3>Chapters</h3>
-  <br>_________________________________________</br>
-
+  <br>________________________</br>
   <% @prompt.chapters.each do |chapter| %>
-
-    <div>
-      <time>Updated on <%= chapter.updated_at %></time>
-
-      <p><%= chapter.body %></p>
-
-	<%= link_to "Edit", edit_prompt_chapter_path(@prompt, chapter) %> |
-	<%= link_to "Delete", prompt_chapter_path(@prompt, chapter), method: :delete %>
-
-    </div>
-    <br>_________________________________________</br>
+    <time>Updated on <%= chapter.updated_at %></time>
+  <p><%= chapter.body %></p>
+    <% if current_user && current_user == chapter.user %>
+  	  <%= link_to "Edit", edit_prompt_chapter_path(@prompt, chapter) %> |
+	    <%= link_to "Delete", prompt_chapter_path(@prompt, chapter), method: :delete %>
+    <% end %>
+    <br>________________________</br>
   <% end %>
-  </div>
-  <%= link_to "Add new chapter", new_prompt_chapter_path(@prompt) %>
+  <% if current_user %>
+    <%= link_to "Add new chapter", new_prompt_chapter_path(@prompt) %>
+  <% end %>
 </article>
