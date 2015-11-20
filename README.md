@@ -1,1 +1,1 @@
-ImpRevise is a web app that provides users with an ability to create or continue written stories in whatever direction they choose.  By creating prompts and appendices, users weave their own tales in a community of peers.
+ImpRevise is a web app that provides users with an ability to create or continue written stories in whatever direction they choose.  By creating prompts and chapters, users weave their own story in a community of peers.
