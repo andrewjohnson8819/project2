@@ -1,13 +1,11 @@
 <h2>Flagged Prompts</h2>
-
-<ul>
-  <% @favorites.each do |favorite| %>
-    <div class = "favorite">
-
-      <h4><%= link_to favorite.prompt.title, prompt_path(favorite.prompt) %></h4>
-        <time>Created by <%= favorite.prompt.user.email %> on <%= favorite.prompt.created_at %></time>
-      <h5><%= favorite.prompt.body %></h5>
-    </div>
-  <br>__________________________________</br>
-  <% end %>
-</ul>
+  <ul>
+    <% @favorites.each do |favorite| %>
+      <div class = "favorite">
+        <h4><%= link_to favorite.prompt.title, prompt_path(favorite.prompt) %></h4>
+        <time>Created by <%= favorite.prompt.user.email %> on <%= favorite.prompt.created_at  %></time>
+        <h5><%= favorite.prompt.body %></h5>
+      </div>
+      <br>__________________________________</br>
+    <% end %>
+  </ul>

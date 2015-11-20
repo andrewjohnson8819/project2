@@ -1,35 +1,26 @@
-
 <article>
   <h2><%= @prompt.title %></h2>
-
   <% if @prompt.favorites.length > 0 %>
-        <%= link_to "&#9873;".html_safe, remove_favorite_prompt_path(@prompt), method: :delete, class: "fav" %>
-      <% else %>
-        <%= link_to "&#9873;".html_safe, add_favorite_prompt_path(@prompt), method: :post, class: "no-fav" %>
-      <% end %>
-
-  <time>Created by <%= @prompt.user.email %> on <%= @prompt.created_at %></time>
-
-  <p><%= "Time period:"%>  <%= @prompt.time_period %></p>
-  <p><%= "Location:"%>  <%= @prompt.location %></p>
-
-  <p><%= @prompt.body %></p>
-  <% if current_user == @prompt.user %>
-    [<%= link_to "Edit", edit_prompt_path(@prompt) %>] [<%= link_to "Delete", prompt_path(@prompt), method: :delete %>]
+    <%= link_to "&#9873;".html_safe, remove_favorite_prompt_path(@prompt), method: :delete, class: "fav" %>
+  <% else %>
+    <%= link_to "&#9873;".html_safe, add_favorite_prompt_path(@prompt), method: :post, class: "no-fav" %>
   <% end %>
-
-
-
-
+    <time>Created by <%= @prompt.user.email %> on <%= @prompt.created_at %></time>
+      <p><%= "Time period:"%>  <%= @prompt.time_period %></p>
+      <p><%= "Location:"%>  <%= @prompt.location %></p>
+      <p><%= @prompt.body %></p>
+    <% if current_user == @prompt.user %>
+      [<%= link_to "Edit", edit_prompt_path(@prompt) %>] [<%= link_to "Delete", prompt_path(@prompt), method: :delete %>]
+    <% end %>
   <div class='chapters'>
   <h3>Chapters</h3>
   <br>________________________</br>
   <% @prompt.chapters.each do |chapter| %>
     <time>Created by <%= chapter.user.email %> on <%= chapter.created_at %></time>
-  <p><%= chapter.body %></p>
-    <% if current_user == chapter.user %>
-  	  [<%= link_to "Edit", edit_prompt_chapter_path(@prompt, chapter) %>] [<%= link_to "Delete", prompt_chapter_path(@prompt, chapter), method: :delete %>]
-    <% end %>
+    <p><%= chapter.body %></p>
+  <% if current_user == chapter.user %>
+  	[<%= link_to "Edit", edit_prompt_chapter_path(@prompt, chapter) %>] [<%= link_to "Delete", prompt_chapter_path(@prompt, chapter), method: :delete %>]
+  <% end %>
     <br>________________________</br>
   <% end %>
   <% if current_user %>

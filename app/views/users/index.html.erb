@@ -1,9 +1,7 @@
 <h2>Penned Prompts</h2>
-
-<ul>
-  <% @users.each do |user| %>
-  <h4><%= link_to current_user.prompts, prompts_path(current_user.prompts) %></h4>
-  <h5><%= current_user.prompts %></h5>
-
-  <% end %>
-</ul>
+  <ul>
+    <% @users.each do |user| %>
+      <h4><%= link_to current_user.prompts, prompts_path(current_user.prompts) %></h4>
+      <h5><%= current_user.prompts %></h5>
+    <% end %>
+  </ul>

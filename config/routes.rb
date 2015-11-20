@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "prompts#index"
-
   get '/users/:id/edit' => "users#index"
   resources :users
   resources :prompts do
     resources :chapters
   end
-
-get '/favorites' => 'favorites#index'
+  get '/favorites' => 'favorites#index'
   resources :prompts do
     member do
       post 'add_favorite'
