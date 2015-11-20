@@ -1,0 +1,11 @@
+<%= form_for @user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :favorite_genre %>
+  <%= f.text_field :favorite_genre %>
+  <%= f.label :favorite_books %>
+  <%= f.text_field :favorite_books %>
+  <%= f.label :About_me %>
+  <%= f.text_area :About_me %>
+  <%= f.submit %>
+<% end %>

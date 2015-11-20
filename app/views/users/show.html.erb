@@ -1,13 +1,9 @@
-<%= link_to "&larr; Back".html_safe, prompts_path %>
 
-<h2><%= @user.email %>'s profile</h2>
 
-<p>Penned prompts</p>
+<h2><%= current_user.email %>'s profile</h2>
 
-  <ul>
-    <% @prompts.each do |prompt| %>
-    <h4><%= link_to prompt.title, prompt_path(prompt) %></h4>
-    <h5><%= prompt.body %></h5>
 
-    <% end %>
-  </ul>
+<p><%= @user.name %></p>
+<% if current_user == @user.user %>
+  [<%= link_to "Edit", edit_user_path(@user) %>]
+<% end %>

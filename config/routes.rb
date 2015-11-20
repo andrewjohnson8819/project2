@@ -5,4 +5,12 @@ Rails.application.routes.draw do
   resources :prompts do
     resources :chapters
   end
+
+get '/favorites' => 'favorites#index'
+  resources :prompts do
+    member do
+      post 'add_favorite'
+      delete 'remove_favorite'
+    end
+  end
 end

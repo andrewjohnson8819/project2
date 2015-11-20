@@ -1,5 +1,5 @@
 <% if current_user %>
-<h3>Prompts <a href="/prompts/new">(+)</a></h3>
+<h3>Prompts <a href="/prompts/new">(create a new prompt)</a></h3>
 <% end %>
 <ul>
 
@@ -7,6 +7,7 @@
     <div class = "prompt">
 
       <h4><%= link_to prompt.title, prompt_path(prompt) %></h4>
+        <time>Created by <%= prompt.user.email %> on <%= prompt.created_at %></time>
       <h5><%= prompt.body %></h5>
     </div>
   <br>__________________________________</br>
