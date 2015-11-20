@@ -37,6 +37,7 @@ h2 {
   font-size: 20px;
   text-align: left;
   color: rgb(59, 36, 5);
+  margin-top: 40px;
 }
 
 .field {
@@ -81,13 +82,12 @@ time {
   color: rgb(59, 36, 5);
 }
 
+.chapters {
+  margin-top: 60px;
+  padding-bottom: -60px;
+}
 
-
-
-
-
-
- a.fav{
+a.fav{
    color: red;
    font-size: 20px;
  }
