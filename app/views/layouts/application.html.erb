@@ -10,7 +10,15 @@
 
   <h1 class= 'logo'><%= link_to "ImpRevise", root_path %></h1>
 
+
+
+
+
+    <h2><%= link_to 'Prompts', prompts_path %></h2>
+
+
   <% if current_user %>
+  <h2><%= link_to 'Profile', user_path(current_user) %></h2>
   <h2><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></h2>
 <% else %>
   <h2><%= link_to 'Signup', new_user_registration_path %></h2>
